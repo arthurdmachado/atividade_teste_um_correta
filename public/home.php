@@ -2,6 +2,7 @@
 session_start();
 if(!isset($_SESSION["usuario"])){
     header("Location: ../index.php");
+    // Aqui é o cabeçalho inicial
     exit();
 }
 
@@ -15,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     VALUES ('$novoUsuario','$novaSenha')";  
 
     if($conn->query($sql) === TRUE){
+        // Mostra os resultados de erro e acerto no cadastro
         echo "<script> alert('Usuário cadastrado com sucesso!')</script>";
     }else{
         echo "<script> alert('Erro ao cadastrar')</script>";

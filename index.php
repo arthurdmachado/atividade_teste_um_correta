@@ -1,17 +1,19 @@
 <?php
     session_start();
+    // Inicia sessão
 
     include("infra/db/connect.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
 
+        // Guarda usuario e senha
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
         
         $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND senha = '$senha'";
 
         $resultado = $conn->query($sql);
-
+        // caso de certo, ele envia pro home
         if ($resultado->num_rows > 0){
             $_SESSION["usuario"] = $usuario;
             header("Location: public/home.php");
@@ -22,6 +24,7 @@
     }
 ?>
 
+<!-- o código agora em html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,6 +32,8 @@
     <title>Login</title>
 </head>
 <body>
+
+    <!-- Login -->
     <h1>Sitema de Login Simples</h1>
 
     <form method="POST">
@@ -44,7 +49,7 @@
                 echo $erro;
             };
 
-            // esse erro serve ara alguma coisa
+            // esse erro serve para alguma coisa
         
         ?>
         <br>
