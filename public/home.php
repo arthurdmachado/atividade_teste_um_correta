@@ -26,6 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
+<!-- Agora em Html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,9 +34,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Home</title>
 </head>
 <body>
+    
     <h3>Bem-Vindo! <?php echo $_SESSION["usuario"]; ?></h3>
     <a href="logout.php"> Sair</a>
 
+    <!-- Cadastro -->
     <hr>
     <h4>Cadastro de Novo Usuário.</h4>
     <form method="POST">
