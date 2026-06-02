@@ -2,6 +2,7 @@
 
 <table border="1" cellpadding="3">
 
+<!-- Aqui criamos a tabela como o habitual -->
     <tr>
         <th>ID</th>
         <th>Usuário</th>
@@ -9,6 +10,7 @@
     </tr>
 
     <?php
+    
     
     $sqlTodosUsuarios = "SELECT * FROM usuarios";
 
